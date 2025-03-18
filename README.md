@@ -1,2 +1,2 @@
 # leetcode
-for test
+This repository documents my LeetCode challenge progress.
