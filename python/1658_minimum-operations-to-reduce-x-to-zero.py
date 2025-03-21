@@ -15,24 +15,22 @@ class Solution:
         left = s = 0
         for right in range(n):
             s += nums[right]
-            while s >= target:
-                if s == target:
-                    res = max(res, right - left + 1)
+            while s > target:
                 s -= nums[left]
                 left += 1
+            if s == target:
+                res = max(res, right - left + 1)
         return res if res == -1 else n - res
 
     # def minOperations(self, nums: List[int], x: int) -> int:
     #     n = len(nums)
     #     res = n + 1
-    #     suffix = [0] * n
     #     suffix_dict = collections.defaultdict(int)
     #     s = 0
     #     suffix_dict[0] = -1
     #     for j in range(n - 1, -1, -1):
     #         s += nums[j]
     #         sj = n - 1 - j
-    #         suffix[sj] = s
     #         suffix_dict[s] = sj
     #     s = 0
     #     for i in range(-1, n):
